@@ -2,7 +2,7 @@ import React from 'react'
 import "./Messages.scss"
 const Messages = () => {
   return (
-    <div className='Messages'>Messages</div>
+    <div className='messages'>Messages</div>
   )
 }
 

@@ -3,7 +3,7 @@ import "./Orders.scss"
 
 const Order = () => {
   return (
-    <div className='Order'>Order</div>
+    <div className='order'>Order</div>
   )
 }
 
