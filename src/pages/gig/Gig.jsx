@@ -1,8 +1,37 @@
 import React from "react";
 import "./Gig.scss";
 import { Slider } from "infinite-react-carousel/lib";
+import { Link, useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import newRequest from "../../utils/newRequest";
+import Reviews from "../../components/reviews/Reviews";
 
 function Gig() {
+  const { id } = useParams();
+
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["gig"],
+    queryFn: () =>
+      newRequest.get(`/gigs/single/${id}`).then((res) => {
+        return res.data;
+      }),
+  });
+
+  const userId = data?.userId;
+
+  const {
+    isLoading: isLoadingUser,
+    error: errorUser,
+    data: dataUser,
+  } = useQuery({
+    queryKey: ["user"],
+    queryFn: () =>
+      newRequest.get(`/users/${userId}`).then((res) => {
+        return res.data;
+      }),
+    enabled: !!userId,
+  });
+
   return (
     <div className="gig">
       <div className="container">
