@@ -174,7 +174,7 @@ function Home() {
               <img src="./img/check.png" alt="" />
               Manage teamwork and boost productivity with one powerful workspace
             </div>
-            <button>Explore Business</button>
+            <button>Explore Domaincer Business</button>
           </div>
           <div className="item">
             <img

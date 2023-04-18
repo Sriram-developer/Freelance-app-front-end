@@ -48,7 +48,7 @@ function Register() {
       <form onSubmit={handleSubmit}>
         <div className="left">
           <h1>Create a new account</h1>
-          <label htmlFor="">Username</label>
+          <label htmlFor="">username</label>
           <input
             name="username"
             type="text"
